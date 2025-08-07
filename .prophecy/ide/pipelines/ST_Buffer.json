@@ -1,0 +1,176 @@
+{
+  "id" : "ST_Buffer",
+  "metainfo" : {
+    "label" : "ST_Buffer",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "elmMMGrnUTUjoMQn3ycCM$$mornlsm_KU7ioGQhzz46a" : {
+      "id" : "elmMMGrnUTUjoMQn3ycCM$$mornlsm_KU7ioGQhzz46a",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "new_england",
+        "x" : -280,
+        "y" : -180,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "new_england",
+          "sourceType" : "Source",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "EHeJPdWfxEm2nOWqzOydZ$$yPx95VRL3qTTJLzoh22q3",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "rR6fMoIxOIyiOhXdD7agh$$TGF4TyMAxJGs9fjpTTlvD",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "XmGSb04wvwPDFqUf3tkTw$$G85X8ejzC3XW-VYbMbPVE" : {
+      "id" : "XmGSb04wvwPDFqUf3tkTw$$G85X8ejzC3XW-VYbMbPVE",
+      "component" : "ST_Buffer",
+      "metadata" : {
+        "label" : "buffer_new_england",
+        "x" : -120,
+        "y" : -180,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "new_england" ],
+        "geometryColumnName" : "geometry",
+        "_oldMacroProperties" : {
+          "macroName" : "ST_Buffer",
+          "projectName" : "andre_st_gems",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['new_england']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "geometry"
+          }, {
+            "name" : "distance",
+            "value" : "20"
+          }, {
+            "name" : "unit",
+            "value" : "miles"
+          }, {
+            "name" : "outputColumnName",
+            "value" : "output"
+          } ]
+        },
+        "outputColumnName" : "output",
+        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
+        "unit" : "miles",
+        "distance" : 20
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "GiROYELQdUte01vsLOM1b$$WojXXEIpvtbX_Uppg4BLU",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "U2O4j1yvmAy-NMgD1HJbj$$dEDh-0AJpwYZ60tj0aozH",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "output",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "ST_Buffer_andre_st_gems",
+        "name" : "ST_Buffer",
+        "projectName" : "andre_st_gems",
+        "sourceProjectName" : "andre_st_gems"
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "o_ceQIwl85dT0ogXMswkZ$$fObYwTSsoG7jeNG_j2kWa",
+    "source" : "elmMMGrnUTUjoMQn3ycCM$$mornlsm_KU7ioGQhzz46a",
+    "sourcePort" : "rR6fMoIxOIyiOhXdD7agh$$TGF4TyMAxJGs9fjpTTlvD",
+    "target" : "XmGSb04wvwPDFqUf3tkTw$$G85X8ejzC3XW-VYbMbPVE",
+    "targetPort" : "GiROYELQdUte01vsLOM1b$$WojXXEIpvtbX_Uppg4BLU"
+  } ],
+  "component" : "Pipeline"
+}
