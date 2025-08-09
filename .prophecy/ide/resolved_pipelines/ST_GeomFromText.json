@@ -1,0 +1,60 @@
+{
+  "id" : "ST_GeomFromText",
+  "metainfo" : {
+    "label" : "ST_GeomFromText",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "t7VXWW9fIqvYbTETGDbMA$$QQeJ9BRBK_a8ROpVjbblL" : {
+      "id" : "t7VXWW9fIqvYbTETGDbMA$$QQeJ9BRBK_a8ROpVjbblL",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "ST_GeomFromText__ST_GeomFromText_1",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "ST_GeomFromText__ST_GeomFromText_1"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "ST_GeomFromText_1_MYrSMn8cNbc8mL0Dxhi9R$$X6J7syAZpxFynLJ9yPsDl", "t7VXWW9fIqvYbTETGDbMA$$QQeJ9BRBK_a8ROpVjbblL", "NZ34n9S5tmwZeoSz5G-Fl$$xCVgtRPW3E6-MhZmVjmyF" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ST_GeomFromText__ST_GeomFromText_1_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "ST_GeomFromText__ST_GeomFromText_1_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}

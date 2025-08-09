@@ -1,0 +1,126 @@
+{
+  "id" : "ST_GeomFromText__ST_GeomFromText_1",
+  "metainfo" : {
+    "label" : "ST_GeomFromText__ST_GeomFromText_1",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "ST_GeomFromText_1_MYrSMn8cNbc8mL0Dxhi9R$$X6J7syAZpxFynLJ9yPsDl" : {
+      "id" : "ST_GeomFromText_1_MYrSMn8cNbc8mL0Dxhi9R$$X6J7syAZpxFynLJ9yPsDl",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "ST_GeomFromText_1"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM ST_GeomFromText_1\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "t7VXWW9fIqvYbTETGDbMA$$QQeJ9BRBK_a8ROpVjbblL" : {
+      "id" : "t7VXWW9fIqvYbTETGDbMA$$QQeJ9BRBK_a8ROpVjbblL",
+      "component" : "ST_GeomFromText",
+      "metadata" : {
+        "label" : "ST_GeomFromText_1",
+        "x" : -180,
+        "y" : -140,
+        "phase" : 0
+      },
+      "properties" : {
+        "parameter1" : "'default_value_of_parameter1'",
+        "_oldMacroProperties" : {
+          "macroName" : "ST_GeomFromText",
+          "projectName" : "andre_st_gems",
+          "parameters" : [ {
+            "name" : "parameter1",
+            "value" : "'default_value_of_parameter1'"
+          } ]
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "W2b5RrE9K_MCUa-ZIOaJ1$$67mm_e037zJNOehTRTpB4",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "MYrSMn8cNbc8mL0Dxhi9R$$X6J7syAZpxFynLJ9yPsDl",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "NZ34n9S5tmwZeoSz5G-Fl$$xCVgtRPW3E6-MhZmVjmyF" : {
+      "id" : "NZ34n9S5tmwZeoSz5G-Fl$$xCVgtRPW3E6-MhZmVjmyF",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "new_england_geom",
+        "x" : -380,
+        "y" : -140,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "new_england_geom",
+          "sourceType" : "Source",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "5UKhDmb8ZUggqkL0NrXPk$$Tz3r5hfsjJElGz73Mh22K",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_t7VXWW9fIqvYbTETGDbMA$$QQeJ9BRBK_a8ROpVjbblL_ST_GeomFromText_1_MYrSMn8cNbc8mL0Dxhi9R$$X6J7syAZpxFynLJ9yPsDl",
+    "source" : "t7VXWW9fIqvYbTETGDbMA$$QQeJ9BRBK_a8ROpVjbblL",
+    "sourcePort" : "MYrSMn8cNbc8mL0Dxhi9R$$X6J7syAZpxFynLJ9yPsDl",
+    "target" : "ST_GeomFromText_1_MYrSMn8cNbc8mL0Dxhi9R$$X6J7syAZpxFynLJ9yPsDl",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "nAOj2VOgFdWhie6ALpjS4",
+    "source" : "NZ34n9S5tmwZeoSz5G-Fl$$xCVgtRPW3E6-MhZmVjmyF",
+    "sourcePort" : "5UKhDmb8ZUggqkL0NrXPk$$Tz3r5hfsjJElGz73Mh22K",
+    "target" : "t7VXWW9fIqvYbTETGDbMA$$QQeJ9BRBK_a8ROpVjbblL",
+    "targetPort" : "W2b5RrE9K_MCUa-ZIOaJ1$$67mm_e037zJNOehTRTpB4"
+  } ],
+  "component" : "Model"
+}

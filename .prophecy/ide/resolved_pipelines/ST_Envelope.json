@@ -1,0 +1,60 @@
+{
+  "id" : "ST_Envelope",
+  "metainfo" : {
+    "label" : "ST_Envelope",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "f8ikjn46FTKVFSmg8hUQR$$uFCrIUJvAG8SJH9eclkPe" : {
+      "id" : "f8ikjn46FTKVFSmg8hUQR$$uFCrIUJvAG8SJH9eclkPe",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "ST_Envelope__create_geospatial_envelope",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "ST_Envelope__create_geospatial_envelope"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "create_geospatial_envelope_fFU3VGgimV1YWDqXN127u$$pf6AimT6W0ji5aMTpbp4D", "f8ikjn46FTKVFSmg8hUQR$$uFCrIUJvAG8SJH9eclkPe", "qZvCU4ji6jxKUthC5TXMT$$LM9kVutywYKctEick3UYo" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ST_Envelope__create_geospatial_envelope_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "ST_Envelope__create_geospatial_envelope_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}

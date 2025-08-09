@@ -1,0 +1,116 @@
+{
+  "id" : "ST_GeomFromText",
+  "metainfo" : {
+    "label" : "ST_GeomFromText",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "NZ34n9S5tmwZeoSz5G-Fl$$xCVgtRPW3E6-MhZmVjmyF" : {
+      "id" : "NZ34n9S5tmwZeoSz5G-Fl$$xCVgtRPW3E6-MhZmVjmyF",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "new_england_geom",
+        "x" : -380,
+        "y" : -140,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "new_england_geom",
+          "sourceType" : "Source",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "4bm4qefa4h9iCAerTl5Sy$$0v-Tytl59W0xkQ295u1yW",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "5UKhDmb8ZUggqkL0NrXPk$$Tz3r5hfsjJElGz73Mh22K",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "t7VXWW9fIqvYbTETGDbMA$$QQeJ9BRBK_a8ROpVjbblL" : {
+      "id" : "t7VXWW9fIqvYbTETGDbMA$$QQeJ9BRBK_a8ROpVjbblL",
+      "component" : "ST_GeomFromText",
+      "metadata" : {
+        "label" : "ST_GeomFromText_1",
+        "x" : -180,
+        "y" : -140,
+        "phase" : 0
+      },
+      "properties" : {
+        "parameter1" : "'default_value_of_parameter1'",
+        "_oldMacroProperties" : {
+          "macroName" : "ST_GeomFromText",
+          "projectName" : "andre_st_gems",
+          "parameters" : [ {
+            "name" : "parameter1",
+            "value" : "'default_value_of_parameter1'"
+          } ]
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "W2b5RrE9K_MCUa-ZIOaJ1$$67mm_e037zJNOehTRTpB4",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "MYrSMn8cNbc8mL0Dxhi9R$$X6J7syAZpxFynLJ9yPsDl",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "ST_GeomFromText_andre_st_gems",
+        "name" : "ST_GeomFromText",
+        "projectName" : "andre_st_gems",
+        "sourceProjectName" : "andre_st_gems"
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "nAOj2VOgFdWhie6ALpjS4",
+    "source" : "NZ34n9S5tmwZeoSz5G-Fl$$xCVgtRPW3E6-MhZmVjmyF",
+    "sourcePort" : "5UKhDmb8ZUggqkL0NrXPk$$Tz3r5hfsjJElGz73Mh22K",
+    "target" : "t7VXWW9fIqvYbTETGDbMA$$QQeJ9BRBK_a8ROpVjbblL",
+    "targetPort" : "W2b5RrE9K_MCUa-ZIOaJ1$$67mm_e037zJNOehTRTpB4"
+  } ],
+  "component" : "Pipeline"
+}

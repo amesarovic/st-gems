@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "ST_Envelope__create_geospatial_envelope"
+  tags:
+  - "prophecy_temp"

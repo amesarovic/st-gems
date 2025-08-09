@@ -14,3 +14,6 @@ sources:
       dataType:
         type: "String"
     type: "table"
+  - name: "new_england_geom"
+    columns: []
+    type: "table"

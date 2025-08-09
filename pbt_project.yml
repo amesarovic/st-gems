@@ -27,17 +27,17 @@ sqlModels: {}
 sqlSnapshots: {}
 sqlTests: {}
 sqlMacros:
-  .prophecy/metadata/sqlmacros/ST_Buffer:
-    name: ST_Buffer
+  .prophecy/metadata/sqlmacros/ST_Envelope:
+    name: ST_Envelope
     macroType: query
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - macros/ST_Buffer.sql
-    - .prophecy/ide/macros/ST_Buffer.json
+    - macros/ST_Envelope.sql
+    - .prophecy/ide/macros/ST_Envelope.json
     - macros/macros.yml
-    - gems/ST_Buffer.py
-    createdAt: '2025-08-07 04:38:33'
+    - gems/ST_Envelope.py
+    createdAt: '2025-08-09 15:16:36'
   .prophecy/metadata/sqlmacros/generate_schema_name:
     name: generate_schema_name
     macroType: expression
@@ -54,7 +54,30 @@ sqlMacros:
     author: mesarovic.andre@prophecy.io
     files:
     - macros/prophecy_tmp_source.sql
+    - .prophecy/ide/macros/prophecy_tmp_source.json
     createdAt: '2025-08-07 04:47:22'
+  .prophecy/metadata/sqlmacros/ST_GeomFromText:
+    name: ST_GeomFromText
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/ST_GeomFromText.sql
+    - .prophecy/ide/macros/ST_GeomFromText.json
+    - macros/macros.yml
+    - gems/ST_GeomFromText.py
+    createdAt: '2025-08-07 04:53:30'
+  .prophecy/metadata/sqlmacros/ST_Buffer:
+    name: ST_Buffer
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/ST_Buffer.sql
+    - .prophecy/ide/macros/ST_Buffer.json
+    - macros/macros.yml
+    - gems/ST_Buffer.py
+    createdAt: '2025-08-07 04:38:33'
 sqlSeeds: {}
 sqlSources:
   .prophecy/metadata/sqlsources/andre_dev_alteryx_spatial:
@@ -79,6 +102,15 @@ sqlSources:
       description: null
       author: mesarovic.andre@prophecy.io
       createdAt: '2025-08-07 04:48:04'
+      tableType: table
+    - name: new_england_geom
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields: []
+      description: null
+      author: mesarovic.andre@prophecy.io
+      createdAt: '2025-08-07 04:55:05'
       tableType: table
 sqlUnreferencedSources: {}
 sqlPipeline:
@@ -119,4 +151,26 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/ST_Buffer.json
     - pipelines/ST_Buffer.py
     createdAt: '2025-08-07 04:47:22'
+  .prophecy/metadata/sqlorchestratorpipeline/ST_GeomFromText:
+    name: ST_GeomFromText
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/ST_GeomFromText/ST_GeomFromText__ST_GeomFromText_1.sql
+    - models/ST_GeomFromText/schema.yml
+    - .prophecy/ide/pipelines/ST_GeomFromText.json
+    - pipelines/ST_GeomFromText.py
+    createdAt: '2025-08-07 04:54:00'
+  .prophecy/metadata/sqlorchestratorpipeline/ST_Envelope:
+    name: ST_Envelope
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/ST_Envelope/schema.yml
+    - models/ST_Envelope/ST_Envelope__create_geospatial_envelope.sql
+    - .prophecy/ide/pipelines/ST_Envelope.json
+    - pipelines/ST_Envelope.py
+    createdAt: '2025-08-09 15:17:59'
 sqlBusinessApps: {}

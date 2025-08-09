@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "ST_GeomFromText__ST_GeomFromText_1"
+  tags:
+  - "prophecy_temp"
