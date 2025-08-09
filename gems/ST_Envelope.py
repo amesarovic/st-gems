@@ -15,8 +15,6 @@ class ST_Envelope(MacroSpec):
         # properties for the component with default values
         relation_name: List[str] = field(default_factory=list)
         schema: str = ''
-        distance: int = 1
-        unit: str = "miles"
         geometryColumnName: str = ""
         outputColumnName: str = ""
         
@@ -69,12 +67,6 @@ class ST_Envelope(MacroSpec):
                 .addElement(
                     TextBox("Output column", placeholder="Output column").bindProperty("outputColumnName")
                 )                                
-                .addElement(
-                    NumberBox("Distance",placeholder="10").bindProperty("distance")
-                )                
-                .addElement(
-                    SelectBox("Units").addOption("Miles", "miles").addOption("Kilometers", "kms").addOption("Meters", "meters").bindProperty("unit")
-                ) 
        ))
 
     def validate(self, context: SqlContext, component: Component) -> List[Diagnostic]:
@@ -115,9 +107,7 @@ class ST_Envelope(MacroSpec):
             f"'{table_name}'",   
             props.schema,
             f"'{props.geometryColumnName}'",
-            f"'{props.outputColumnName}'",         
-            str(props.distance),
-            f"'{props.unit}'", 
+            f"'{props.outputColumnName}'"
         ]
 
         params = ",".join([param for param in arguments])
@@ -131,8 +121,6 @@ class ST_Envelope(MacroSpec):
             relation_name=parametersMap.get('relation_name'),
             schema=parametersMap.get('schema'),
             geometryColumnName=parametersMap.get('geometryColumnName'),
-            distance=int(parametersMap.get('distance')),
-            unit=str(parametersMap.get('unit')),
             outputColumnName=str(parametersMap.get('outputColumnName'))
         )
 
@@ -145,8 +133,6 @@ class ST_Envelope(MacroSpec):
                 MacroParameter("relation_name", str(properties.relation_name)),
                 MacroParameter("schema", str(properties.schema)),
                 MacroParameter("destinationColumnNames", properties.geometryColumnName),
-                MacroParameter("distance", str(properties.distance)),
-                MacroParameter("unit", properties.unit),
                 MacroParameter("outputColumnName", properties.outputColumnName)
             ]
         )

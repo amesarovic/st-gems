@@ -21,9 +21,7 @@ create_geospatial_envelope AS (
       'new_england', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
-      'foo', 
-      1, 
-      'miles'
+      'foo'
     )
   }}
 
